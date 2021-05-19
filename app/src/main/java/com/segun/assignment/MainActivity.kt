@@ -15,7 +15,7 @@ class MainActivity : AppCompatActivity() {
 
         Flowable.just("sweet","sour","salty","tangy")
             .subscribeOn(Schedulers.io())
-            .observeOn(Schedulers.mainThread())
+            .observeOn(AndroidSchedulers.mainThread())
             .subscribe(
                 {value -> println("Recieved: $value")},
                 { error -> println("Error: $error")},
